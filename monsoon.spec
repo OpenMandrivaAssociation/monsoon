@@ -7,10 +7,9 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://www.monotorrent.com/Files/%version/%{name}-%{version}.tar.gz
-Source1: MonoTorrent.Interface.exe.config
 Patch: monsoon-0.11.3-desktopentry.patch
 License: MIT/X11
-Group: System/Libraries
+Group: Networking/File transfer
 Url: http://monotorrent.blogspot.com/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
