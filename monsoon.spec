@@ -1,6 +1,6 @@
 %define name monsoon
 %define version 0.15
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Graphical Bittorrent client for Mono
 Name: %{name}
@@ -39,7 +39,7 @@ integration.
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall libdir=%buildroot%_prefix/lib
-ln -sf %_prefix/lib/monotorrent/MonoTorrent.dll %buildroot%_prefix/lib/%name
+#ln -sf %_prefix/lib/monotorrent/MonoTorrent.dll %buildroot%_prefix/lib/%name
 
 %find_lang %name
 
