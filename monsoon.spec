@@ -1,12 +1,12 @@
 %define name monsoon
-%define version 0.15
-%define release %mkrel 3
+%define version 0.20
+%define release %mkrel 1
 
 Summary: Graphical Bittorrent client for Mono
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://www.monotorrent.com/Files/%version/%{name}-%{version}.tar.gz
+Source0: http://www.monsoon-project.org/jaws/data/files/%version/%{name}-%{version}.tar.gz
 Patch: monsoon-0.11.3-desktopentry.patch
 License: MIT/X11
 Group: Networking/File transfer
@@ -14,7 +14,8 @@ Url: http://monotorrent.blogspot.com/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: mono-devel
-#BuildRequires: monotorrent >= 0.40
+BuildRequires: mono-nat
+BuildRequires: monotorrent >= 0.70
 BuildRequires: ndesk-dbus-glib
 BuildRequires: gnome-sharp2-devel
 Provides: monotorrent-interface
@@ -30,7 +31,6 @@ integration.
 %prep
 %setup -q
 %patch -p1
-#ln -sf %_prefix/lib/monotorrent/MonoTorrent.dll Monsoon/libs/
 
 %build
 ./configure --prefix=%_prefix
@@ -39,7 +39,7 @@ integration.
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall libdir=%buildroot%_prefix/lib
-#ln -sf %_prefix/lib/monotorrent/MonoTorrent.dll %buildroot%_prefix/lib/%name
+ln -sf %_prefix/lib/monotorrent/MonoTorrent.dll %_prefix/lib/mono-nat/Mono.Nat.dll %buildroot%_prefix/lib/%name
 
 %find_lang %name
 
@@ -62,6 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %_prefix/lib/%name/Monsoon.exe
 %_prefix/lib/%name/Monsoon.exe.config
 %_prefix/lib/%name/MonoTorrent.dll
-#gw TODO: replace these two by packaged versions
 %_prefix/lib/%name/Mono.Nat.dll
+#gw TODO: replace this by a packaged version
 %_prefix/lib/%name/NLog.dll
