@@ -1,6 +1,6 @@
 %define name monsoon
 %define version 0.20
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Graphical Bittorrent client for Mono
 Name: %{name}
@@ -17,6 +17,7 @@ BuildRequires: mono-devel
 BuildRequires: mono-nat
 BuildRequires: monotorrent >= 0.70
 BuildRequires: ndesk-dbus-glib
+#BuildRequires: nlog
 BuildRequires: gnome-sharp2-devel
 BuildRequires: intltool
 Provides: monotorrent-interface
@@ -41,6 +42,7 @@ integration.
 rm -rf $RPM_BUILD_ROOT
 %makeinstall libdir=%buildroot%_prefix/lib
 ln -sf %_prefix/lib/monotorrent/MonoTorrent.dll %_prefix/lib/mono-nat/Mono.Nat.dll %buildroot%_prefix/lib/%name
+rm -f %buildroot%_prefix/lib/%name/NLog.dll
 
 %find_lang %name
 
@@ -64,5 +66,3 @@ rm -rf $RPM_BUILD_ROOT
 %_prefix/lib/%name/Monsoon.exe.config
 %_prefix/lib/%name/MonoTorrent.dll
 %_prefix/lib/%name/Mono.Nat.dll
-#gw TODO: replace this by a packaged version
-%_prefix/lib/%name/NLog.dll
