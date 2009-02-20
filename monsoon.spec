@@ -18,6 +18,7 @@ BuildRequires: mono-nat
 BuildRequires: monotorrent >= 0.70
 BuildRequires: ndesk-dbus-glib
 BuildRequires: gnome-sharp2-devel
+BuildRequires: intltool
 Provides: monotorrent-interface
 Obsoletes: monotorrent-interface
 %define _requires_exceptions lib64\\|libgtk\\|libx
