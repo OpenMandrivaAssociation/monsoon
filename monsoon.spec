@@ -1,6 +1,6 @@
 %define name monsoon
-%define version 0.20
-%define release %mkrel 2
+%define version 0.21
+%define release %mkrel 1
 
 Summary: Graphical Bittorrent client for Mono
 Name: %{name}
@@ -15,7 +15,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: mono-devel
 BuildRequires: mono-nat
-BuildRequires: monotorrent >= 0.70
+BuildRequires: monotorrent >= 0.72
 BuildRequires: ndesk-dbus-glib
 #BuildRequires: nlog
 BuildRequires: gnome-sharp2-devel
