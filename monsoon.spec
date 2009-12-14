@@ -1,21 +1,25 @@
 %define name monsoon
 %define version 0.21
-%define release %mkrel 1
+%define svn r148377
+%define release %mkrel 2.%svn.1
 
 Summary: Graphical Bittorrent client for Mono
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://www.monsoon-project.org/jaws/data/files/%version/%{name}-%{version}.tar.gz
+Source0: http://www.monsoon-project.org/jaws/data/files/%version/%{name}-%svn.tar.xz
 Patch: monsoon-0.11.3-desktopentry.patch
+#gw fix for an API change in monotorrent:
+#http://anonsvn.mono-project.com/viewvc/trunk/bitsharp/src/MonoTorrent/MonoTorrent.Client/ClientEngine.cs?r1=131076&r2=137752
+Patch1: monsoon-r148377-dont-wait-on-stopall.patch
 License: MIT/X11
 Group: Networking/File transfer
-Url: http://monotorrent.blogspot.com/
+Url: http://www.monsoon-project.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: mono-devel
 BuildRequires: mono-nat
-BuildRequires: monotorrent >= 0.72
+BuildRequires: monotorrent >= 0.80
 BuildRequires: ndesk-dbus-glib
 #BuildRequires: nlog
 BuildRequires: gnome-sharp2-devel
@@ -31,8 +35,10 @@ integration.
 
 
 %prep
-%setup -q
+%setup -q -n %name
 %patch -p1
+%patch1
+./autogen.sh
 
 %build
 ./configure --prefix=%_prefix
