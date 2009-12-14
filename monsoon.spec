@@ -17,6 +17,7 @@ Group: Networking/File transfer
 Url: http://www.monsoon-project.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
+BuildRequires: mono-addins
 BuildRequires: mono-devel
 BuildRequires: mono-nat
 BuildRequires: monotorrent >= 0.80
