@@ -24,6 +24,7 @@ BuildRequires: ndesk-dbus-glib
 #BuildRequires: nlog
 BuildRequires: gnome-sharp2-devel
 BuildRequires: intltool
+BuildRequires: libtool
 Provides: monotorrent-interface
 Obsoletes: monotorrent-interface
 %define _requires_exceptions lib64\\|libgtk\\|libx
