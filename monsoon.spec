@@ -21,7 +21,7 @@ BuildRequires: mono-addins
 BuildRequires: mono-devel
 BuildRequires: mono-nat
 BuildRequires: monotorrent >= 0.80
-BuildRequires: ndesk-dbus-glib
+BuildRequires: ndesk-dbus-glib-devel
 #BuildRequires: nlog
 BuildRequires: gnome-sharp2-devel
 BuildRequires: intltool
