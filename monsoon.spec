@@ -1,7 +1,7 @@
 %define name monsoon
 %define version 0.21
 %define svn r148377
-%define release %mkrel 2.%svn.1
+%define release %mkrel 2.%svn.2
 
 Summary: Graphical Bittorrent client for Mono
 Name: %{name}
