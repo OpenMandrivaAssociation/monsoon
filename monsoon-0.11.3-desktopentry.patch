@@ -1,0 +1,24 @@
+diff -p -up monsoon-0.11.3/Monsoon/monsoon.desktop~ monsoon-0.11.3/Monsoon/monsoon.desktop
+--- monsoon-0.11.3/Monsoon/monsoon.desktop~	2008-04-15 23:41:19.000000000 +0200
++++ monsoon-0.11.3/Monsoon/monsoon.desktop	2008-04-30 10:57:55.000000000 +0200
+@@ -1,18 +1,16 @@
+ [Desktop Entry]
+ Version=1.0
+-Encoding=UTF-8
+ Name=Monsoon
+ Comment=BitTorrent Client
+ Exec=monsoon
+ Terminal=false
+ Type=Application
+-Categories=GNOME;Internet;FileTransfer;Network;
++Categories=GTK;GNOME;FileTransfer;P2P;Network;
+ X-GNOME-Bugzilla-Bugzilla=Novell
+ X-GNOME-Bugzilla-Product=Mono:Tools
+ X-GNOME-Bugzilla-Component=Monsoon
+ X-Desktop-File-Install-Version=0.9
+-OnlyShowIn=GNOME;
+ Name[en_GB]=Monsoon
+-Icon=stock_weather-showers.png
++Icon=stock_weather-showers
+ GenericName=BitTorrent Client
+ MimeType=application/x-bittorrent;
