@@ -14,7 +14,7 @@ Patch: monsoon-0.11.3-desktopentry.patch
 Patch1: monsoon-r148377-dont-wait-on-stopall.patch
 License: MIT/X11
 Group: Networking/File transfer
-Url: http://www.monsoon-project.org/
+Url: https://www.monsoon-project.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: mono-addins-devel
