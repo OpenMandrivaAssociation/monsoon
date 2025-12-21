@@ -17,6 +17,11 @@ Group: Networking/File transfer
 Url: https://www.monsoon-project.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: mono-addins-devel
 BuildRequires: mono-devel
 BuildRequires: mono-nat
